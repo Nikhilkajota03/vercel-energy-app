@@ -333,16 +333,26 @@ const Marketplace = () => {
                       </a>
                     </td>
 
+
+
+
+
                     
                     <td className="w-1/6 text-center">
                       <a
                         onClick={() => {
+
+                          if(data.user !=user){
                         
-                          if(data.status==="BUY"){
+                          if(data.status==="BUY" && data.user != user ){
                             makePayment([data])
                           }else{
                             message.error("already sold")
                           }
+
+                        }else{
+                          message.error("owner can not buy")
+                        }
                           
                         }
                          
@@ -356,6 +366,11 @@ const Marketplace = () => {
                         {data.status}
                       </a>
                     </td>
+
+
+
+
+
 
                     <td className="w-1/6  py-3 px-4 text-center">
                       <a

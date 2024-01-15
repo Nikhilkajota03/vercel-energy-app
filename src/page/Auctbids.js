@@ -247,8 +247,13 @@ const Auctbids = () => {
 
                        onClick={()=>  {
 
+                    if(user === value.owner){
+                     
                         const res =  Acceptbid(value._id)  
                         console.log(res)
+                    }else{
+                      message.error("you are not the owner")
+                    }
 
                        }  }
 
